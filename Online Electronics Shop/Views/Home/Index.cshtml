@@ -1,0 +1,293 @@
+﻿
+@model Online_Electronics_Shop.Models.Home.HomeIndexViewModel
+
+@using PagedList;
+@using PagedList.Mvc;
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+
+
+
+@if (Session["UserID"] != null)
+{
+    <div>
+        Welcome : <a href="#"> @Session["UserName"] </a><br />
+        <a href="/Home/Logout"> Logout</a>
+    </div>
+}
+
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Success!</strong>@TempData["msg"]
+
+    </div>
+
+
+}
+
+<marquee><p style="color:red;">Only 'Cash On Delivery' Payment method is available</p></marquee>
+
+<div class="row">
+    <div class="col-lg-10 col-md-10 col-sm-10">
+        @if (TempData["total"] == null)
+        {
+
+            <h3>
+                Total Bill: 0 ৳.
+                Cart(0)
+            </h3>
+        }
+        else
+        {
+            <h3> Total Bill: @TempData["total"] ৳.</h3>
+            <h3>Cart(@TempData["total_item"])</h3>
+        }
+
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2">
+        @*<h3 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> <button class="btn btn-danger">@Html.ActionLink("Check Out", "checkout", "Home")</button></h3>*@
+        <h3 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> <button class="btn btn-danger">@Html.ActionLink("Check Out", "checkout", "Home", new { @style = "color:#fcf9fa;" })</button></h3>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="themeSlider" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#themeSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#themeSlider" data-slide-to="1"></li>
+        <li data-target="#themeSlider" data-slide-to="2"></li>
+        <li data-target="#themeSlider" data-slide-to="3"></li>
+        <li data-target="#themeSlider" data-slide-to="4"></li>
+        <li data-target="#themeSlider" data-slide-to="5"></li>
+        <li data-target="#themeSlider" data-slide-to="6"></li>
+        <li data-target="#themeSlider" data-slide-to="7"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="imgOverlay"></div>
+            @*<img style="height:320px;width:100%" src="../Images/4_03_21_2017_08_23_17.jpg" alt="First slide">*@
+            <img style="height:340px;width:100%" src="../Images/Slider1.jpg" alt="First slide">
+            <div class="carousel-caption">
+                <h3>New</h3>
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            @*<img style="height:320px;width:100%" src="../Images/3_03_21_2017_08_19_28.jpg" alt="Second slide">*@
+            <img style="height:340px;width:100%" src="../Images/Slider2.jpg" alt="Second slide">
+            <div class="carousel-caption">
+                <h3>Smartphone</h3>
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            @*<img style="height:320px;width:100%" src="../Images/2_03_21_2017_08_15_59.jpg" alt="Third slide">*@
+            <img style="height:340px;width:100%" src="../Images/Slider3.jpg" alt="Third slide">
+            <div class="carousel-caption">
+                <h3>SmartWatch</h3>
+
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="imgOverlay"></div>
+            @*<img style="height:320px;width:100%" src="../Images/2_03_21_2017_08_15_59.jpg" alt="Third slide">*@
+            <img style="height:340px;width:100%" src="../Images/Slider4.jpg" alt="Fourth slide">
+            <div class="carousel-caption">
+                <h3>Trending</h3>
+
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="imgOverlay"></div>
+            @*<img style="height:320px;width:100%" src="../Images/2_03_21_2017_08_15_59.jpg" alt="Third slide">*@
+            <img style="height:340px;width:100%" src="../Images/Slider5.jpg" alt="Fifth slide">
+            <div class="carousel-caption">
+                <h3>Accessories</h3>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="item">
+            <div class="imgOverlay"></div>
+            @*<img style="height:320px;width:100%" src="../Images/2_03_21_2017_08_15_59.jpg" alt="Third slide">*@
+            <img style="height:340px;width:100%" src="../Images/Slider6.jpg" alt="Fifth slide">
+            <div class="carousel-caption">
+                <h3>Latest</h3>
+
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="imgOverlay"></div>
+            @*<img style="height:320px;width:100%" src="../Images/2_03_21_2017_08_15_59.jpg" alt="Third slide">*@
+            <img style="height:340px;width:100%" src="../Images/Slider7.jpg" alt="Fifth slide">
+            <div class="carousel-caption">
+                <h3>Stylish</h3>
+
+            </div>
+        </div>
+
+
+        <div class="item">
+            <div class="imgOverlay"></div>
+            @*<img style="height:320px;width:100%" src="../Images/2_03_21_2017_08_15_59.jpg" alt="Third slide">*@
+            <img style="height:340px;width:100%" src="../Images/Slider8.jpg" alt="Fifth slide">
+            <div class="carousel-caption">
+                <h3>Fashionable</h3>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+    <a class="left carousel-control" href="#themeSlider" data-slide="prev">
+        <span class="fa fa-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#themeSlider" data-slide="next">
+        <span class="fa fa-chevron-right"></span>
+    </a>
+
+</div>
+<div class="olContent f1"><h2 style="color:black">Search Product/Category</h2></div>
+
+<form method="post">
+    <div class="olSearch fr">
+        <input type="text" name="search" placeholder="Enter Keyword" class="inputComn form-control" />
+        <div class="searchIcon">
+            <button type="button" class="searchBtn">
+                <img src="~/Images/searchIcon.png" />
+            </button>
+        </div>
+
+
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h2>Our Products </h2>
+        </div>
+    </div>
+</div>
+
+<div class="row product-container">
+
+    @foreach (var item in Model.ListOfProducts)
+    {<div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+            <div class="thumbnail product-item" style="height:300px">
+
+                <img class="img-responsive" title="Click to View Product detail"
+                     style="cursor:pointer;height:160px;width:100%"
+                     src="~/ProductImg/@item.ProductImage" />
+
+                <div class="caption">
+                    <h5>@item.ProductName</h5>
+                    <p>@item.Price ৳.</p>
+                    <p>
+                        <button class="pull-right">
+                            @Html.ActionLink("View Details", "Details", new { productId = item.ProductId })
+                        </button>
+
+                        @if (item.Quantity > 0)
+                        {
+                            @*using (Html.BeginForm("AddToCart", "Home", new { productId = item.ProductId }, FormMethod.Post))
+                                {
+
+                                    <button type="submit" class="pull-right"><i class="fa fa-shopping-cart"></i></button>
+
+                                }*@
+
+                        <p>Available</p>
+
+                    }
+                    else
+                    {
+                        <p>Not Available</p>
+                    }
+
+
+                        </p>
+                        <div class="product-item-badge">
+
+
+
+                            @if (item.IsFeatured == true)
+                            {
+                                <p>New</p>
+
+                            }
+                            else
+                            {
+                                <p>Old</p>
+                            }
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        }
+</div>
+
+
+@*Html.PagedListPager(Model.ListOfProducts,page => Url.Action("Index",new { page,search=Request.QueryString["search"]}),new PagedListRenderOptions() { Display=PagedListDisplayMode.IfNeeded,DisplayItemSliceAndTotal=true})*@
+<div class="container">
+
+    @Html.PagedListPager(Model.ListOfProducts, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayItemSliceAndTotal = true })
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

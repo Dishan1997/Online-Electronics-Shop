@@ -1,0 +1,91 @@
+﻿
+@model IEnumerable<Online_Electronics_Shop.Models.ViewModel>
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*<h2>Orders</h2>*@
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+
+
+</head>
+<body>
+    <div class="container-fluid py-4">
+        <h4 class="text-center text-uppercase">Orders List</h4>
+        <table class="table table-striped table-bordered">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th>Order Id</th>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Order Date</th>
+                    <th>Order Quantity</th>
+                    <th>Order Bill</th>
+                    <th>Invoice Id</th>
+                    <th>User Id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>User Email</th>
+                    <th>Contact No</th>
+                    <th>Action</th>
+
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.ods.o_id</td>
+                    <td>@item.ods.o_fk_pro</td>
+                    <td>@item.tp.ProductName</td>
+                    <td>@item.ods.o_date</td>
+                    <td>@item.ods.o_qty</td>
+                    <td>@item.ods.o_bill</td>
+                    <td>@item.ivc.in_id</td>
+                    <td>@item.ivc.in_fk_user</td>
+                    <td>@item.shd.FirstName</td>
+                    <td>@item.shd.LastName</td>
+                    <td>@item.su.Email</td>
+                    <td>@item.shd.ContactNo</td>
+                    <td>
+
+                        @Html.ActionLink("ChangeStatus", "EditStatus", new { o_id = item.ods.o_id }, new { @style = "color:#000aaa;" })
+                        @Html.ActionLink("Delete", "ConfirmDelete", new { o_id = item.ods.o_id }, new { @style = "color:red;" })
+
+
+                    </td>
+
+
+
+
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+
+

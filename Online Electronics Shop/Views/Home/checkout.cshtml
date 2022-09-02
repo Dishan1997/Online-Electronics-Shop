@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "checkout";
+}
+
+@if (TempData["total"] != null )
+{
+
+
+
+
+    <table class="table table-responsive">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>QUANTITY</th>
+                <th>BILL</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in TempData["cart"] as List<Online_Electronics_Shop.Models.cart>)
+            {
+
+                <tr>
+                    <td>@item.productid</td>
+                    <td>@item.productname</td>
+                    <td>@item.price</td>
+                    <td>@item.qty</td>
+                    <td>@item.bill</td>
+                    <td>
+                        <a class="btn btn-danger" href="@Url.Action("remove", new { id = item.productid })">&#10008;</a>
+
+                    </td>
+
+                </tr>
+
+            }
+
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>@TempData["total"]</td>
+
+            </tr>
+        </tfoot>
+
+    </table>
+
+
+
+
+
+}
+else
+{
+    <h2 style="color:red"> Cart is empty....</h2>
+    @Html.ActionLink("go Back", "Index", "Home")
+}
+
+
+
+@if (TempData["total"] != null)
+{
+    @*using (Html.BeginForm())
+        {
+            <input type="submit" value="Shop Now" class="btn btn-primary" />
+
+
+        }*@
+
+    @*<input type="submit" value="Proceed To Checkout" class="btn btn-primary" />*@
+    @*<a class="btn btn-primary" href="@Url.Action("addshipping details",new {id=Model.productid })">Proceed To Checkout</a>*@
+
+    <a class="btn btn-primary" href="~/Home/AddShippingDetails">Proceed To Checkout</a>
+
+}
+
+
+

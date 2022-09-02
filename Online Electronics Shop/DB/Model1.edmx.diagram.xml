@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="458e4c5d274a4612b78f33869e69fe6f" Name="Diagram1">
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_Cart" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_CartStatus" PointX="5.375" PointY="4.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_Category" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_Members" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_ShippingDetails" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Cart__Produc__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Produ__Quant__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Membe__403A8C7D" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.SiteUser" Width="1.5" PointX="7.375" PointY="0.75" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Membe__6D0D32F4" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.tbl_invoice" Width="1.5" PointX="9.625" PointY="8.125" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__tbl_invoi__in_fk__71D1E811" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Invoi__7A672E12" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.tbl_order" Width="1.5" PointX="11.875" PointY="4.25" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__tbl_order__o_fk___0B91BA14" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__tbl_order__o_fk___0A9D95DB" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Order__0F624AF8" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_Contact" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_OrderStatus" Width="1.5" PointX="14.125" PointY="9" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Order__Order__25518C17" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.tbl_delivery" Width="1.5" PointX="14.125" PointY="4.125" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__tbl_deliv__o_fk___3587F3E0" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__tbl_deliv__o_fk___367C1819" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__tbl_delive__o_id__3493CFA7" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.SiteAdmin" Width="1.5" PointX="7.375" PointY="4.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

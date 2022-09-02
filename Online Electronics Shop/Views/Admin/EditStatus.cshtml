@@ -1,0 +1,247 @@
+﻿@model Online_Electronics_Shop.DB.tbl_order
+
+@{
+    ViewBag.Title = "EditStatus";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>Edit Status</h2>
+
+    <div>
+
+        <hr />
+
+        <div class="col-md-8">
+
+
+
+
+            <div class="col-md-12">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.o_date, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.DisplayFor(model => model.o_date, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.o_date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+            </div>
+
+           
+
+            <div class="col-md-12">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.o_qty, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.DisplayFor(model => model.o_qty, new { htmlAttributes = new { @class = "form-control" } })
+
+                        @Html.ValidationMessageFor(model => model.o_qty, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-12">
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.o_bill, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.DisplayFor(model => model.o_bill, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.o_bill, "৳.", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="col-md-12">
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.o_id, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-12">
+                        @Html.DisplayFor(model => model.o_id, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.o_id, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    @*using (Html.BeginForm("AddCart", "Home", new { productId = Model.ProductId }, FormMethod.Post))
+                        {
+
+                            <button type="submit" class="btn btn-info" value="Add To Cart">Add To Cart</button>
+
+                        }*@
+                    @*<input type="submit" class="btn btn-info" value="Add To Cart" />*@
+
+
+                    <h4 style="text-align:center">  </h4>
+                    @*<span class="btn btn-success"> @Html.ActionLink("Add To Cart", "AddCart", new { id = Model.ProductId }) </span>*@
+
+
+                    <a class="btn btn-success" href=" @Url.Action( "ConfirmDelivery", new { id = Model.o_id })"><i class="fa fa-shopping-cart">Confirm Delivery </i></a>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        
+
+            </div>
+
+
+        </div>
+
+
+
+
+        @*<dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProductId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProductName)
+            </dd>*@
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsActive)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsDelete)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsDelete)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreatedDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedDate)
+            </dd>*@
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.ProductImage)
+
+            </dt>
+
+            <dd>
+                @*Html.DisplayFor(model => model.ProductImage)*@
+
+        @*@Html.EditorFor(model => model.ProductImage, new { htmlAttributes = new { @class = "form-control" } })*@
+        @*<div class="col-lg-6">
+                    <img class="img-responsive" title="Click to View Product detail"
+                         style="cursor:pointer;height:250px;width:50%"
+                         src="~/ProductImg/@Model.ProductImage" />
+                </div>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsFeatured)
+            </dt>
+
+            <dd>
+                @*Html.DisplayFor(model => model.IsFeatured)
+                if (Model.IsFeatured == true)
+                {
+                    <p>New</p>
+
+                }
+                else
+                {
+                    <p>Old</p>
+                }
+
+            </dd>*@
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.Quantity)
+
+            </dt>
+
+
+            <dd>*@
+        @*@if (Model.Quantity > 0)
+            {
+                <p>Available</p>
+                @Html.DisplayFor(model => model.Quantity)
+
+            }
+            else
+            {
+                <p>Not Available</p>
+            }*@
+
+
+        @*</dd>*@
+
+
+
+
+
+
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CategoryId)
+            </dd>*@
+
+        @*<dt>
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+
+            </dl>*@
+    </div>
+
+
+
+
+    <p>
+        @*Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

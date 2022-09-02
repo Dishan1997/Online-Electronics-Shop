@@ -1,0 +1,983 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbOnlineElectronicsShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SiteAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SiteUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsValid" Type="bit" />
+        </EntityType>
+        <EntityType Name="Tbl_Cart">
+          <Key>
+            <PropertyRef Name="CartId" />
+          </Key>
+          <Property Name="CartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="MemberId" Type="int" />
+          <Property Name="CartStatusId" Type="int" />
+        </EntityType>
+        <EntityType Name="Tbl_CartStatus">
+          <Key>
+            <PropertyRef Name="CartStatusId" />
+          </Key>
+          <Property Name="CartStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CartStatus" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Tbl_Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="500" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="Tbl_Contact">
+          <Key>
+            <PropertyRef Name="con_id" />
+          </Key>
+          <Property Name="con_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="80" />
+          <Property Name="Email" Type="varchar" MaxLength="80" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="12" />
+          <Property Name="Subject" Type="varchar" MaxLength="200" />
+          <Property Name="Message" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tbl_delivery">
+          <Key>
+            <PropertyRef Name="d_id" />
+          </Key>
+          <Property Name="d_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="o_id" Type="int" />
+          <Property Name="o_fk_pro" Type="int" />
+          <Property Name="o_fk_invoice" Type="int" />
+          <Property Name="o_date" Type="datetime" />
+          <Property Name="o_qty" Type="int" />
+          <Property Name="o_bill" Type="float" />
+          <Property Name="o_unitprice" Type="float" />
+          <Property Name="d_date" Type="datetime" />
+          <Property Name="PaymentType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_invoice">
+          <Key>
+            <PropertyRef Name="in_id" />
+          </Key>
+          <Property Name="in_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="in_fk_user" Type="int" />
+          <Property Name="in_date" Type="datetime" />
+          <Property Name="in_totalbill" Type="float" />
+        </EntityType>
+        <EntityType Name="Tbl_Members">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="MemberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="200" />
+          <Property Name="LastName" Type="varchar" MaxLength="200" />
+          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="Password" Type="varchar" MaxLength="200" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_order">
+          <Key>
+            <PropertyRef Name="o_id" />
+          </Key>
+          <Property Name="o_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="o_fk_pro" Type="int" />
+          <Property Name="o_fk_invoice" Type="int" />
+          <Property Name="o_date" Type="datetime" />
+          <Property Name="o_qty" Type="int" />
+          <Property Name="o_bill" Type="float" />
+          <Property Name="o_unitprice" Type="float" />
+        </EntityType>
+        <EntityType Name="Tbl_OrderStatus">
+          <Key>
+            <PropertyRef Name="OrderStatusId" />
+          </Key>
+          <Property Name="OrderStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="OrderStatus" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Tbl_Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="500" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="Detail" Type="varchar" MaxLength="500" />
+          <Property Name="ProductImage" Type="varchar(max)" />
+          <Property Name="IsFeatured" Type="bit" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Tbl_ShippingDetails">
+          <Key>
+            <PropertyRef Name="ShippingDetailId" />
+          </Key>
+          <Property Name="ShippingDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberId" Type="int" />
+          <Property Name="Address" Type="varchar" MaxLength="500" />
+          <Property Name="City" Type="varchar" MaxLength="500" />
+          <Property Name="State" Type="varchar" MaxLength="500" />
+          <Property Name="Country" Type="varchar" MaxLength="500" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="AmountPaid" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="PaymentType" Type="varchar" MaxLength="50" />
+          <Property Name="FirstName" Type="varchar" MaxLength="80" />
+          <Property Name="LastName" Type="varchar" MaxLength="80" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="12" />
+          <Property Name="InvoiceId" Type="int" />
+        </EntityType>
+        <Association Name="FK__Tbl_Cart__Produc__4316F928">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="0..1" />
+          <End Role="Tbl_Cart" Type="Self.Tbl_Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="Tbl_Cart">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_deliv__o_fk___3587F3E0">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="0..1" />
+          <End Role="tbl_delivery" Type="Self.tbl_delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="tbl_delivery">
+              <PropertyRef Name="o_fk_pro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_deliv__o_fk___367C1819">
+          <End Role="tbl_invoice" Type="Self.tbl_invoice" Multiplicity="0..1" />
+          <End Role="tbl_delivery" Type="Self.tbl_delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_invoice">
+              <PropertyRef Name="in_id" />
+            </Principal>
+            <Dependent Role="tbl_delivery">
+              <PropertyRef Name="o_fk_invoice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_delive__o_id__3493CFA7">
+          <End Role="tbl_order" Type="Self.tbl_order" Multiplicity="0..1" />
+          <End Role="tbl_delivery" Type="Self.tbl_delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_order">
+              <PropertyRef Name="o_id" />
+            </Principal>
+            <Dependent Role="tbl_delivery">
+              <PropertyRef Name="o_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_invoi__in_fk__71D1E811">
+          <End Role="SiteUser" Type="Self.SiteUser" Multiplicity="0..1" />
+          <End Role="tbl_invoice" Type="Self.tbl_invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteUser">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_invoice">
+              <PropertyRef Name="in_fk_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_order__o_fk___0A9D95DB">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="0..1" />
+          <End Role="tbl_order" Type="Self.tbl_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="tbl_order">
+              <PropertyRef Name="o_fk_pro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_order__o_fk___0B91BA14">
+          <End Role="tbl_invoice" Type="Self.tbl_invoice" Multiplicity="0..1" />
+          <End Role="tbl_order" Type="Self.tbl_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_invoice">
+              <PropertyRef Name="in_id" />
+            </Principal>
+            <Dependent Role="tbl_order">
+              <PropertyRef Name="o_fk_invoice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Order__Order__25518C17">
+          <End Role="tbl_order" Type="Self.tbl_order" Multiplicity="0..1" />
+          <End Role="Tbl_OrderStatus" Type="Self.Tbl_OrderStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_order">
+              <PropertyRef Name="o_id" />
+            </Principal>
+            <Dependent Role="Tbl_OrderStatus">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Produ__Quant__398D8EEE">
+          <End Role="Tbl_Category" Type="Self.Tbl_Category" Multiplicity="0..1" />
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Tbl_Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Shipp__Invoi__10566F31">
+          <End Role="tbl_invoice" Type="Self.tbl_invoice" Multiplicity="0..1" />
+          <End Role="Tbl_ShippingDetails" Type="Self.Tbl_ShippingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_invoice">
+              <PropertyRef Name="in_id" />
+            </Principal>
+            <Dependent Role="Tbl_ShippingDetails">
+              <PropertyRef Name="InvoiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Shipp__Membe__0E6E26BF">
+          <End Role="SiteUser" Type="Self.SiteUser" Multiplicity="0..1" />
+          <End Role="Tbl_ShippingDetails" Type="Self.Tbl_ShippingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteUser">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_ShippingDetails">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Shipp__Order__0F624AF8">
+          <End Role="tbl_order" Type="Self.tbl_order" Multiplicity="0..1" />
+          <End Role="Tbl_ShippingDetails" Type="Self.Tbl_ShippingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_order">
+              <PropertyRef Name="o_id" />
+            </Principal>
+            <Dependent Role="Tbl_ShippingDetails">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbOnlineElectronicsShopModelStoreContainer">
+          <EntitySet Name="SiteAdmin" EntityType="Self.SiteAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SiteUser" EntityType="Self.SiteUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Cart" EntityType="Self.Tbl_Cart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_CartStatus" EntityType="Self.Tbl_CartStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Category" EntityType="Self.Tbl_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Contact" EntityType="Self.Tbl_Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_delivery" EntityType="Self.tbl_delivery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_invoice" EntityType="Self.tbl_invoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Members" EntityType="Self.Tbl_Members" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_order" EntityType="Self.tbl_order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_OrderStatus" EntityType="Self.Tbl_OrderStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Product" EntityType="Self.Tbl_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_ShippingDetails" EntityType="Self.Tbl_ShippingDetails" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Tbl_Cart__Produc__4316F928" Association="Self.FK__Tbl_Cart__Produc__4316F928">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Cart" EntitySet="Tbl_Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_deliv__o_fk___3587F3E0" Association="Self.FK__tbl_deliv__o_fk___3587F3E0">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="tbl_delivery" EntitySet="tbl_delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_deliv__o_fk___367C1819" Association="Self.FK__tbl_deliv__o_fk___367C1819">
+            <End Role="tbl_invoice" EntitySet="tbl_invoice" />
+            <End Role="tbl_delivery" EntitySet="tbl_delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_delive__o_id__3493CFA7" Association="Self.FK__tbl_delive__o_id__3493CFA7">
+            <End Role="tbl_order" EntitySet="tbl_order" />
+            <End Role="tbl_delivery" EntitySet="tbl_delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_invoi__in_fk__71D1E811" Association="Self.FK__tbl_invoi__in_fk__71D1E811">
+            <End Role="SiteUser" EntitySet="SiteUser" />
+            <End Role="tbl_invoice" EntitySet="tbl_invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_order__o_fk___0A9D95DB" Association="Self.FK__tbl_order__o_fk___0A9D95DB">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="tbl_order" EntitySet="tbl_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_order__o_fk___0B91BA14" Association="Self.FK__tbl_order__o_fk___0B91BA14">
+            <End Role="tbl_invoice" EntitySet="tbl_invoice" />
+            <End Role="tbl_order" EntitySet="tbl_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Order__Order__25518C17" Association="Self.FK__Tbl_Order__Order__25518C17">
+            <End Role="tbl_order" EntitySet="tbl_order" />
+            <End Role="Tbl_OrderStatus" EntitySet="Tbl_OrderStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Produ__Quant__398D8EEE" Association="Self.FK__Tbl_Produ__Quant__398D8EEE">
+            <End Role="Tbl_Category" EntitySet="Tbl_Category" />
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Shipp__Invoi__10566F31" Association="Self.FK__Tbl_Shipp__Invoi__10566F31">
+            <End Role="tbl_invoice" EntitySet="tbl_invoice" />
+            <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Shipp__Membe__0E6E26BF" Association="Self.FK__Tbl_Shipp__Membe__0E6E26BF">
+            <End Role="SiteUser" EntitySet="SiteUser" />
+            <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Shipp__Order__0F624AF8" Association="Self.FK__Tbl_Shipp__Order__0F624AF8">
+            <End Role="tbl_order" EntitySet="tbl_order" />
+            <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbOnlineElectronicsShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Cart">
+          <Key>
+            <PropertyRef Name="CartId" />
+          </Key>
+          <Property Name="CartId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="MemberId" Type="Int32" />
+          <Property Name="CartStatusId" Type="Int32" />
+          <NavigationProperty Name="Tbl_Product" Relationship="Self.FK__Tbl_Cart__Produc__4316F928" FromRole="Tbl_Cart" ToRole="Tbl_Product" />
+        </EntityType>
+        <EntityType Name="Tbl_CartStatus">
+          <Key>
+            <PropertyRef Name="CartStatusId" />
+          </Key>
+          <Property Name="CartStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="CartStatus" MaxLength="500" FixedLength="false" Unicode="false" Type="String" />
+        </EntityType>
+        <EntityType Name="Tbl_Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <NavigationProperty Name="Tbl_Product" Relationship="Self.FK__Tbl_Produ__Quant__398D8EEE" FromRole="Tbl_Category" ToRole="Tbl_Product" />
+        </EntityType>
+        <EntityType Name="Tbl_Members">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="MemberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Tbl_ShippingDetails" Relationship="Self.FK__Tbl_Shipp__Membe__403A8C7D" FromRole="Tbl_Members" ToRole="Tbl_ShippingDetails" />
+        </EntityType>
+        <EntityType Name="Tbl_Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ProductImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsFeatured" Type="Boolean" />
+          <Property Name="Quantity" Type="Int32" />
+          <NavigationProperty Name="Tbl_Cart" Relationship="Self.FK__Tbl_Cart__Produc__4316F928" FromRole="Tbl_Product" ToRole="Tbl_Cart" />
+          <NavigationProperty Name="Tbl_Category" Relationship="Self.FK__Tbl_Produ__Quant__398D8EEE" FromRole="Tbl_Product" ToRole="Tbl_Category" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Detail" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_order" Relationship="dbOnlineElectronicsShopModel.FK__tbl_order__o_fk___0A9D95DB" FromRole="Tbl_Product" ToRole="tbl_order" />
+          <NavigationProperty Name="tbl_delivery" Relationship="dbOnlineElectronicsShopModel.FK__tbl_deliv__o_fk___3587F3E0" FromRole="Tbl_Product" ToRole="tbl_delivery" />
+        </EntityType>
+        <EntityType Name="Tbl_ShippingDetails">
+          <Key>
+            <PropertyRef Name="ShippingDetailId" />
+          </Key>
+          <Property Name="ShippingDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberId" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="AmountPaid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_Members" Relationship="Self.FK__Tbl_Shipp__Membe__403A8C7D" FromRole="Tbl_ShippingDetails" ToRole="Tbl_Members" />
+          <Property Name="FirstName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceId" Type="Int32" />
+          <NavigationProperty Name="SiteUser" Relationship="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Membe__6D0D32F4" FromRole="Tbl_ShippingDetails" ToRole="SiteUser" />
+          <NavigationProperty Name="tbl_invoice" Relationship="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Invoi__7A672E12" FromRole="Tbl_ShippingDetails" ToRole="tbl_invoice" />
+          <Property Name="State" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_order" Relationship="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Order__0F624AF8" FromRole="Tbl_ShippingDetails" ToRole="tbl_order" />
+        </EntityType>
+        <Association Name="FK__Tbl_Cart__Produc__4316F928">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="0..1" />
+          <End Role="Tbl_Cart" Type="Self.Tbl_Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="Tbl_Cart">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Produ__Quant__398D8EEE">
+          <End Role="Tbl_Category" Type="Self.Tbl_Category" Multiplicity="0..1" />
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Tbl_Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Shipp__Membe__403A8C7D">
+          <End Role="Tbl_Members" Type="Self.Tbl_Members" Multiplicity="0..1" />
+          <End Role="Tbl_ShippingDetails" Type="Self.Tbl_ShippingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Members">
+              <PropertyRef Name="MemberId" />
+            </Principal>
+            <Dependent Role="Tbl_ShippingDetails">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbOnlineElectronicsShopEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Cart" EntityType="Self.Tbl_Cart" />
+          <EntitySet Name="Tbl_CartStatus" EntityType="Self.Tbl_CartStatus" />
+          <EntitySet Name="Tbl_Category" EntityType="Self.Tbl_Category" />
+          <EntitySet Name="Tbl_Members" EntityType="Self.Tbl_Members" />
+          <EntitySet Name="Tbl_Product" EntityType="Self.Tbl_Product" />
+          <EntitySet Name="Tbl_ShippingDetails" EntityType="Self.Tbl_ShippingDetails" />
+          <AssociationSet Name="FK__Tbl_Cart__Produc__4316F928" Association="Self.FK__Tbl_Cart__Produc__4316F928">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Cart" EntitySet="Tbl_Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Produ__Quant__398D8EEE" Association="Self.FK__Tbl_Produ__Quant__398D8EEE">
+            <End Role="Tbl_Category" EntitySet="Tbl_Category" />
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Shipp__Membe__403A8C7D" Association="Self.FK__Tbl_Shipp__Membe__403A8C7D">
+            <End Role="Tbl_Members" EntitySet="Tbl_Members" />
+            <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+          </AssociationSet>
+          <EntitySet Name="SiteUsers" EntityType="dbOnlineElectronicsShopModel.SiteUser" />
+          <AssociationSet Name="FK__Tbl_Shipp__Membe__6D0D32F4" Association="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Membe__6D0D32F4">
+            <End Role="SiteUser" EntitySet="SiteUsers" />
+            <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+          </AssociationSet>
+          <EntitySet Name="tbl_invoice" EntityType="dbOnlineElectronicsShopModel.tbl_invoice" />
+          <AssociationSet Name="FK__tbl_invoi__in_fk__71D1E811" Association="dbOnlineElectronicsShopModel.FK__tbl_invoi__in_fk__71D1E811">
+            <End Role="SiteUser" EntitySet="SiteUsers" />
+            <End Role="tbl_invoice" EntitySet="tbl_invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Shipp__Invoi__7A672E12" Association="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Invoi__7A672E12">
+            <End Role="tbl_invoice" EntitySet="tbl_invoice" />
+            <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+          </AssociationSet>
+          <EntitySet Name="tbl_order" EntityType="dbOnlineElectronicsShopModel.tbl_order" />
+          <AssociationSet Name="FK__tbl_order__o_fk___0B91BA14" Association="dbOnlineElectronicsShopModel.FK__tbl_order__o_fk___0B91BA14">
+            <End Role="tbl_invoice" EntitySet="tbl_invoice" />
+            <End Role="tbl_order" EntitySet="tbl_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_order__o_fk___0A9D95DB" Association="dbOnlineElectronicsShopModel.FK__tbl_order__o_fk___0A9D95DB">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="tbl_order" EntitySet="tbl_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tbl_Shipp__Order__0F624AF8" Association="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Order__0F624AF8">
+            <End Role="tbl_order" EntitySet="tbl_order" />
+            <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+          </AssociationSet>
+          <EntitySet Name="Tbl_Contact" EntityType="dbOnlineElectronicsShopModel.Tbl_Contact" />
+          <EntitySet Name="Tbl_OrderStatus" EntityType="dbOnlineElectronicsShopModel.Tbl_OrderStatus" />
+          <AssociationSet Name="FK__Tbl_Order__Order__25518C17" Association="dbOnlineElectronicsShopModel.FK__Tbl_Order__Order__25518C17">
+            <End Role="tbl_order" EntitySet="tbl_order" />
+            <End Role="Tbl_OrderStatus" EntitySet="Tbl_OrderStatus" />
+          </AssociationSet>
+          <EntitySet Name="tbl_delivery" EntityType="dbOnlineElectronicsShopModel.tbl_delivery" />
+          <AssociationSet Name="FK__tbl_deliv__o_fk___3587F3E0" Association="dbOnlineElectronicsShopModel.FK__tbl_deliv__o_fk___3587F3E0">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="tbl_delivery" EntitySet="tbl_delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_deliv__o_fk___367C1819" Association="dbOnlineElectronicsShopModel.FK__tbl_deliv__o_fk___367C1819">
+            <End Role="tbl_invoice" EntitySet="tbl_invoice" />
+            <End Role="tbl_delivery" EntitySet="tbl_delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_delive__o_id__3493CFA7" Association="dbOnlineElectronicsShopModel.FK__tbl_delive__o_id__3493CFA7">
+            <End Role="tbl_order" EntitySet="tbl_order" />
+            <End Role="tbl_delivery" EntitySet="tbl_delivery" />
+          </AssociationSet>
+          <EntitySet Name="SiteAdmins" EntityType="dbOnlineElectronicsShopModel.SiteAdmin" />
+          </EntityContainer>
+        <EntityType Name="SiteUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsValid" Type="Boolean" />
+          <NavigationProperty Name="Tbl_ShippingDetails" Relationship="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Membe__6D0D32F4" FromRole="SiteUser" ToRole="Tbl_ShippingDetails" />
+          <NavigationProperty Name="tbl_invoice" Relationship="dbOnlineElectronicsShopModel.FK__tbl_invoi__in_fk__71D1E811" FromRole="SiteUser" ToRole="tbl_invoice" />
+          </EntityType>
+        <Association Name="FK__Tbl_Shipp__Membe__6D0D32F4">
+          <End Type="dbOnlineElectronicsShopModel.SiteUser" Role="SiteUser" Multiplicity="0..1" />
+          <End Type="dbOnlineElectronicsShopModel.Tbl_ShippingDetails" Role="Tbl_ShippingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteUser">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_ShippingDetails">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_invoice">
+          <Key>
+            <PropertyRef Name="in_id" />
+          </Key>
+          <Property Name="in_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="in_fk_user" Type="Int32" />
+          <Property Name="in_date" Type="DateTime" Precision="3" />
+          <Property Name="in_totalbill" Type="Double" />
+          <NavigationProperty Name="SiteUser" Relationship="dbOnlineElectronicsShopModel.FK__tbl_invoi__in_fk__71D1E811" FromRole="tbl_invoice" ToRole="SiteUser" />
+          <NavigationProperty Name="Tbl_ShippingDetails" Relationship="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Invoi__7A672E12" FromRole="tbl_invoice" ToRole="Tbl_ShippingDetails" />
+          <NavigationProperty Name="tbl_order" Relationship="dbOnlineElectronicsShopModel.FK__tbl_order__o_fk___0B91BA14" FromRole="tbl_invoice" ToRole="tbl_order" />
+          <NavigationProperty Name="tbl_delivery" Relationship="dbOnlineElectronicsShopModel.FK__tbl_deliv__o_fk___367C1819" FromRole="tbl_invoice" ToRole="tbl_delivery" />
+        </EntityType>
+        <Association Name="FK__tbl_invoi__in_fk__71D1E811">
+          <End Type="dbOnlineElectronicsShopModel.SiteUser" Role="SiteUser" Multiplicity="0..1" />
+          <End Type="dbOnlineElectronicsShopModel.tbl_invoice" Role="tbl_invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteUser">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_invoice">
+              <PropertyRef Name="in_fk_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Shipp__Invoi__7A672E12">
+          <End Type="dbOnlineElectronicsShopModel.tbl_invoice" Role="tbl_invoice" Multiplicity="0..1" />
+          <End Type="dbOnlineElectronicsShopModel.Tbl_ShippingDetails" Role="Tbl_ShippingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_invoice">
+              <PropertyRef Name="in_id" />
+            </Principal>
+            <Dependent Role="Tbl_ShippingDetails">
+              <PropertyRef Name="InvoiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_order">
+          <Key>
+            <PropertyRef Name="o_id" />
+          </Key>
+          <Property Name="o_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="o_fk_pro" Type="Int32" />
+          <Property Name="o_fk_invoice" Type="Int32" />
+          <Property Name="o_date" Type="DateTime" Precision="3" />
+          <Property Name="o_qty" Type="Int32" />
+          <Property Name="o_bill" Type="Double" />
+          <Property Name="o_unitprice" Type="Double" />
+          <NavigationProperty Name="tbl_invoice" Relationship="dbOnlineElectronicsShopModel.FK__tbl_order__o_fk___0B91BA14" FromRole="tbl_order" ToRole="tbl_invoice" />
+          <NavigationProperty Name="Tbl_Product" Relationship="dbOnlineElectronicsShopModel.FK__tbl_order__o_fk___0A9D95DB" FromRole="tbl_order" ToRole="Tbl_Product" />
+          <NavigationProperty Name="Tbl_ShippingDetails" Relationship="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Order__0F624AF8" FromRole="tbl_order" ToRole="Tbl_ShippingDetails" />
+          <NavigationProperty Name="Tbl_OrderStatus" Relationship="dbOnlineElectronicsShopModel.FK__Tbl_Order__Order__25518C17" FromRole="tbl_order" ToRole="Tbl_OrderStatus" />
+          <NavigationProperty Name="tbl_delivery" Relationship="dbOnlineElectronicsShopModel.FK__tbl_delive__o_id__3493CFA7" FromRole="tbl_order" ToRole="tbl_delivery" />
+        </EntityType>
+        <Association Name="FK__tbl_order__o_fk___0B91BA14">
+          <End Type="dbOnlineElectronicsShopModel.tbl_invoice" Role="tbl_invoice" Multiplicity="0..1" />
+          <End Type="dbOnlineElectronicsShopModel.tbl_order" Role="tbl_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_invoice">
+              <PropertyRef Name="in_id" />
+            </Principal>
+            <Dependent Role="tbl_order">
+              <PropertyRef Name="o_fk_invoice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_order__o_fk___0A9D95DB">
+          <End Type="dbOnlineElectronicsShopModel.Tbl_Product" Role="Tbl_Product" Multiplicity="0..1" />
+          <End Type="dbOnlineElectronicsShopModel.tbl_order" Role="tbl_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="tbl_order">
+              <PropertyRef Name="o_fk_pro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tbl_Shipp__Order__0F624AF8">
+          <End Type="dbOnlineElectronicsShopModel.tbl_order" Role="tbl_order" Multiplicity="0..1" />
+          <End Type="dbOnlineElectronicsShopModel.Tbl_ShippingDetails" Role="Tbl_ShippingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_order">
+              <PropertyRef Name="o_id" />
+            </Principal>
+            <Dependent Role="Tbl_ShippingDetails">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Tbl_Contact">
+          <Key>
+            <PropertyRef Name="con_id" />
+          </Key>
+          <Property Name="con_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_OrderStatus">
+          <Key>
+            <PropertyRef Name="OrderStatusId" />
+          </Key>
+          <Property Name="OrderStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="OrderStatus" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_order" Relationship="dbOnlineElectronicsShopModel.FK__Tbl_Order__Order__25518C17" FromRole="Tbl_OrderStatus" ToRole="tbl_order" />
+        </EntityType>
+        <Association Name="FK__Tbl_Order__Order__25518C17">
+          <End Type="dbOnlineElectronicsShopModel.tbl_order" Role="tbl_order" Multiplicity="0..1" />
+          <End Type="dbOnlineElectronicsShopModel.Tbl_OrderStatus" Role="Tbl_OrderStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_order">
+              <PropertyRef Name="o_id" />
+            </Principal>
+            <Dependent Role="Tbl_OrderStatus">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_delivery">
+          <Key>
+            <PropertyRef Name="d_id" />
+          </Key>
+          <Property Name="d_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="o_id" Type="Int32" />
+          <Property Name="o_fk_pro" Type="Int32" />
+          <Property Name="o_fk_invoice" Type="Int32" />
+          <Property Name="o_date" Type="DateTime" Precision="3" />
+          <Property Name="o_qty" Type="Int32" />
+          <Property Name="o_bill" Type="Double" />
+          <Property Name="o_unitprice" Type="Double" />
+          <Property Name="d_date" Type="DateTime" Precision="3" />
+          <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_Product" Relationship="dbOnlineElectronicsShopModel.FK__tbl_deliv__o_fk___3587F3E0" FromRole="tbl_delivery" ToRole="Tbl_Product" />
+          <NavigationProperty Name="tbl_invoice" Relationship="dbOnlineElectronicsShopModel.FK__tbl_deliv__o_fk___367C1819" FromRole="tbl_delivery" ToRole="tbl_invoice" />
+          <NavigationProperty Name="tbl_order" Relationship="dbOnlineElectronicsShopModel.FK__tbl_delive__o_id__3493CFA7" FromRole="tbl_delivery" ToRole="tbl_order" />
+        </EntityType>
+        <Association Name="FK__tbl_deliv__o_fk___3587F3E0">
+          <End Type="dbOnlineElectronicsShopModel.Tbl_Product" Role="Tbl_Product" Multiplicity="0..1" />
+          <End Type="dbOnlineElectronicsShopModel.tbl_delivery" Role="tbl_delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="tbl_delivery">
+              <PropertyRef Name="o_fk_pro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_deliv__o_fk___367C1819">
+          <End Type="dbOnlineElectronicsShopModel.tbl_invoice" Role="tbl_invoice" Multiplicity="0..1" />
+          <End Type="dbOnlineElectronicsShopModel.tbl_delivery" Role="tbl_delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_invoice">
+              <PropertyRef Name="in_id" />
+            </Principal>
+            <Dependent Role="tbl_delivery">
+              <PropertyRef Name="o_fk_invoice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_delive__o_id__3493CFA7">
+          <End Type="dbOnlineElectronicsShopModel.tbl_order" Role="tbl_order" Multiplicity="0..1" />
+          <End Type="dbOnlineElectronicsShopModel.tbl_delivery" Role="tbl_delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_order">
+              <PropertyRef Name="o_id" />
+            </Principal>
+            <Dependent Role="tbl_delivery">
+              <PropertyRef Name="o_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SiteAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbOnlineElectronicsShopModelStoreContainer" CdmEntityContainer="dbOnlineElectronicsShopEntities">
+          <EntitySetMapping Name="Tbl_Cart">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.Tbl_Cart">
+              <MappingFragment StoreEntitySet="Tbl_Cart">
+                <ScalarProperty Name="CartId" ColumnName="CartId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="CartStatusId" ColumnName="CartStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_CartStatus">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.Tbl_CartStatus">
+              <MappingFragment StoreEntitySet="Tbl_CartStatus">
+                <ScalarProperty Name="CartStatusId" ColumnName="CartStatusId" />
+                <ScalarProperty Name="CartStatus" ColumnName="CartStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Category">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.Tbl_Category">
+              <MappingFragment StoreEntitySet="Tbl_Category">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Members">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.Tbl_Members">
+              <MappingFragment StoreEntitySet="Tbl_Members">
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Product">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.Tbl_Product">
+              <MappingFragment StoreEntitySet="Tbl_Product">
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="IsFeatured" ColumnName="IsFeatured" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_ShippingDetails">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.Tbl_ShippingDetails">
+              <MappingFragment StoreEntitySet="Tbl_ShippingDetails">
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ShippingDetailId" ColumnName="ShippingDetailId" />
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteUsers">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.SiteUser">
+              <MappingFragment StoreEntitySet="SiteUser">
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_invoice">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.tbl_invoice">
+              <MappingFragment StoreEntitySet="tbl_invoice">
+                <ScalarProperty Name="in_totalbill" ColumnName="in_totalbill" />
+                <ScalarProperty Name="in_date" ColumnName="in_date" />
+                <ScalarProperty Name="in_fk_user" ColumnName="in_fk_user" />
+                <ScalarProperty Name="in_id" ColumnName="in_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_order">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.tbl_order">
+              <MappingFragment StoreEntitySet="tbl_order">
+                <ScalarProperty Name="o_unitprice" ColumnName="o_unitprice" />
+                <ScalarProperty Name="o_bill" ColumnName="o_bill" />
+                <ScalarProperty Name="o_qty" ColumnName="o_qty" />
+                <ScalarProperty Name="o_date" ColumnName="o_date" />
+                <ScalarProperty Name="o_fk_invoice" ColumnName="o_fk_invoice" />
+                <ScalarProperty Name="o_fk_pro" ColumnName="o_fk_pro" />
+                <ScalarProperty Name="o_id" ColumnName="o_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Contact">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.Tbl_Contact">
+              <MappingFragment StoreEntitySet="Tbl_Contact">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="con_id" ColumnName="con_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_OrderStatus">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.Tbl_OrderStatus">
+              <MappingFragment StoreEntitySet="Tbl_OrderStatus">
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="OrderStatusId" ColumnName="OrderStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_delivery">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.tbl_delivery">
+              <MappingFragment StoreEntitySet="tbl_delivery">
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="d_date" ColumnName="d_date" />
+                <ScalarProperty Name="o_unitprice" ColumnName="o_unitprice" />
+                <ScalarProperty Name="o_bill" ColumnName="o_bill" />
+                <ScalarProperty Name="o_qty" ColumnName="o_qty" />
+                <ScalarProperty Name="o_date" ColumnName="o_date" />
+                <ScalarProperty Name="o_fk_invoice" ColumnName="o_fk_invoice" />
+                <ScalarProperty Name="o_fk_pro" ColumnName="o_fk_pro" />
+                <ScalarProperty Name="o_id" ColumnName="o_id" />
+                <ScalarProperty Name="d_id" ColumnName="d_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteAdmins">
+            <EntityTypeMapping TypeName="dbOnlineElectronicsShopModel.SiteAdmin">
+              <MappingFragment StoreEntitySet="SiteAdmin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="a4fa225104f4498faaf67688696af3b3" Name="Diagram1">
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_Cart" Width="1.5" PointX="5.25" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_CartStatus" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_Category" Width="1.5" PointX="0.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_Members" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_Product" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_ShippingDetails" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.SiteUser" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.tbl_invoice" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.tbl_order" Width="1.5" PointX="5.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_Contact" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.Tbl_OrderStatus" Width="1.5" PointX="7.5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.tbl_delivery" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineElectronicsShopModel.SiteAdmin" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Cart__Produc__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Produ__Quant__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Membe__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Membe__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__tbl_invoi__in_fk__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Invoi__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__tbl_order__o_fk___0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__tbl_order__o_fk___0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Shipp__Order__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__Tbl_Order__Order__25518C17" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__tbl_deliv__o_fk___3587F3E0" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__tbl_deliv__o_fk___367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineElectronicsShopModel.FK__tbl_delive__o_id__3493CFA7" ManuallyRouted="false" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Check";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+
+@if (TempData["OStatus"] != null)
+{
+
+
+
+    <table class="table table-responsive">
+
+        <thead>
+            <tr>
+                <th>Order_ID</th>
+                <th>Invoice Id</th>
+                <th>Quantity</th>
+                <th>UnitPrice</th>
+                <th>Bill</th>
+                <th>OrderDate</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in TempData["OStatus"] as List<Online_Electronics_Shop.Models.OStatus>)
+            {
+
+            <tr>
+                <td>@item.OrderId</td>
+                <td>@item.InvoiceId</td>
+                <td>@item.Quantity</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.Bill</td>
+                <td>@item.OrderDate</td>
+
+
+
+            </tr>
+
+            }
+
+        </tbody>
+
+
+
+    </table>
+
+}
+
+
+
+
+
+
+
+
+
+@if (TempData["OStatus"] != null)
+{
+
+
+    <div style="padding-top:40px;">
+
+
+
+
+
+
+        <center> <a class="btn btn-primary" href="~/Admin/AddDeliveryDetails">Add Delivery Details</a></center>
+    </div>
+
+
+
+}
+
+
+
+

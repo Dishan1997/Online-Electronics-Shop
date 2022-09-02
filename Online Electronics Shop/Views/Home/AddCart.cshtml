@@ -1,0 +1,59 @@
+﻿
+
+@model Online_Electronics_Shop.DB.Tbl_Product
+@{
+    ViewBag.Title = "AddCart";
+}
+
+
+<br />
+<br />
+<br />
+
+@if (Session["UserID"] != null)
+{
+
+    using (@Html.BeginForm())
+    {
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4 col-sm-4">
+
+                    @*<img style="min-height:200px; width:200px;" src="@Url.Content(Model.ProductImage)" />*@
+                    <img style="min-height:200px; width:200px;" src="~/ProductImg/@Model.ProductImage" />
+
+
+                </div>
+
+
+                <div class="col-lg-8 col-md-8 col-sm-8">
+
+                    <h1>Product Name: @Model.ProductName</h1>
+                    <h2>Price: @Model.Price ৳.</h2>
+
+
+                    <input type="number" name="qty" value="1" id="qty" min="1" max="@Model.Quantity" />
+
+                    <input type="submit" value="Submit" class="btn btn-default" />
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    }
+}
+
+else
+{
+    <h3 style="text-align:center;">
+        @Html.ActionLink("Click to Login Here", "Index", "Register")
+    </h3>
+
+
+}

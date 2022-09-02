@@ -1,0 +1,168 @@
+F:\Online Electronics Shop\Online Electronics Shop\bin\Online Electronics Shop.dll.config
+F:\Online Electronics Shop\Online Electronics Shop\bin\Online Electronics Shop.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\Online Electronics Shop.pdb
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\csc.exe
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\csc.exe.config
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\csc.rsp
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\csi.exe
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\csi.exe.config
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\csi.rsp
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.Managed.Core.targets
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.AppContext.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Collections.Immutable.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Console.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.IO.Compression.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.IO.FileSystem.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.IO.Pipes.AccessControl.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.IO.Pipes.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Reflection.Metadata.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.AccessControl.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.Claims.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.Principal.Windows.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.ValueTuple.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Xml.XmlDocument.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Xml.XPath.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\vbc.exe
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\vbc.exe.config
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\vbc.rsp
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\VBCSCompiler.exe
+F:\Online Electronics Shop\Online Electronics Shop\bin\roslyn\VBCSCompiler.exe.config
+F:\Online Electronics Shop\Online Electronics Shop\bin\Antlr3.Runtime.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\Microsoft.Web.Infrastructure.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\Newtonsoft.Json.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Helpers.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Mvc.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Optimization.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Razor.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.WebPages.Deployment.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.WebPages.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.WebPages.Razor.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\WebGrease.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Helpers.xml
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Mvc.xml
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Optimization.xml
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Razor.xml
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.WebPages.xml
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.WebPages.Deployment.xml
+F:\Online Electronics Shop\Online Electronics Shop\bin\System.Web.WebPages.Razor.xml
+F:\Online Electronics Shop\Online Electronics Shop\bin\Newtonsoft.Json.xml
+F:\Online Electronics Shop\Online Electronics Shop\bin\Antlr3.Runtime.pdb
+F:\Online Electronics Shop\Online Electronics Shop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Online Electronics Shop\Online Electronics Shop\obj\Debug\Online Electronics Shop.csprojAssemblyReference.cache
+F:\Online Electronics Shop\Online Electronics Shop\obj\Debug\Online Electronics Shop.csproj.CoreCompileInputs.cache
+F:\Online Electronics Shop\Online Electronics Shop\obj\Debug\Online Electronics Shop.csproj.CopyComplete
+F:\Online Electronics Shop\Online Electronics Shop\obj\Debug\Online Electronics Shop.dll
+F:\Online Electronics Shop\Online Electronics Shop\obj\Debug\Online Electronics Shop.pdb
+F:\Online Electronics Shop\Online Electronics Shop\bin\EntityFramework.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\EntityFramework.SqlServer.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\EntityFramework.xml
+F:\Online Electronics Shop\Online Electronics Shop\bin\EntityFramework.SqlServer.xml
+F:\Online Electronics Shop\Online Electronics Shop\bin\PagedList.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\PagedList.Mvc.dll
+F:\Online Electronics Shop\Online Electronics Shop\bin\PagedList.xml
+F:\Online Electronics Shop\Online Electronics Shop\bin\PagedList.Mvc.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\Online Electronics Shop.dll.config
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\Online Electronics Shop.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\Online Electronics Shop.pdb
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\csc.exe
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\csc.exe.config
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\csc.rsp
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\csi.exe
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\csi.exe.config
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\csi.rsp
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.Managed.Core.targets
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.AppContext.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Collections.Immutable.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Console.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.IO.Compression.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.IO.FileSystem.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.IO.Pipes.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Reflection.Metadata.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.AccessControl.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.Claims.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Security.Principal.Windows.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.ValueTuple.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Xml.XmlDocument.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Xml.XPath.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\vbc.exe
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\vbc.exe.config
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\vbc.rsp
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\VBCSCompiler.exe
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\roslyn\VBCSCompiler.exe.config
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\Antlr3.Runtime.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\EntityFramework.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\EntityFramework.SqlServer.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\Microsoft.Web.Infrastructure.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\Newtonsoft.Json.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\PagedList.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\PagedList.Mvc.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Helpers.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Mvc.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Optimization.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Razor.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.WebPages.Deployment.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.WebPages.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.WebPages.Razor.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\WebGrease.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\EntityFramework.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\EntityFramework.SqlServer.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\PagedList.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\PagedList.Mvc.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Helpers.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Mvc.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Optimization.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.Razor.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.WebPages.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.WebPages.Deployment.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\System.Web.WebPages.Razor.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\Newtonsoft.Json.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\Antlr3.Runtime.pdb
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\obj\Debug\Online Electronics Shop.csprojAssemblyReference.cache
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\obj\Debug\Online Electronics Shop.csproj.CoreCompileInputs.cache
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\obj\Debug\Online Electronics Shop.csproj.CopyComplete
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\obj\Debug\Online Electronics Shop.dll
+E:\3.2 semester\SD lab\Final project\Online Electronics Shop-20191010T163129Z-001\Online Electronics Shop\Online Electronics Shop\obj\Debug\Online Electronics Shop.pdb

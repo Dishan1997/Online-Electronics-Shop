@@ -1,0 +1,44 @@
+﻿
+
+@model Online_Electronics_Shop.DB.tbl_order
+@{
+    ViewBag.Title = "ConfirmDelivery";
+}
+
+
+<br />
+<br />
+<br />
+
+
+
+    @using (Html.BeginForm())
+    {
+
+        <div class="container">
+            <div class="row">
+
+                
+
+
+                <div class="col-lg-8 col-md-8 col-sm-8">
+
+                    <h1>Order Id: @Model.o_id</h1>
+                    <h1>Invoice Id: @Model.o_fk_invoice</h1>
+                    <h1>Order Date: @Model.o_date</h1>
+
+                    <h2>Delivered</h2>
+
+                    <!-- <input type="text" name="sts" value="Delivered"  />-->
+
+                    <input type="submit" value="Submit" class="btn btn-default" />
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    }
